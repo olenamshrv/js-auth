@@ -1,0 +1,36 @@
+@use '../../style' as s;
+
+@use '../../style/form.scss' as form;
+
+@use '../../component/form-field' as form-field;
+
+
+.field--password {
+
+    & .field__wrapper {
+        width: 100%;
+        display: grid;
+
+        position: relative;
+
+        & .field__icon {
+            @include s.click;
+
+            display: block;
+            height: 14px;
+            width: 14px;
+
+            background-image: url('/svg/eye-off.svg');
+            background-size: cover;
+
+            &[show] {
+                background-image: url("/svg/eye-outline.svg");
+            };
+
+            position: absolute;
+            right: 16px;
+            top: calc( 50% - 7px);
+
+        }
+    }
+}

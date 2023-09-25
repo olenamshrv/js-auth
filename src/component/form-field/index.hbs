@@ -1,0 +1,13 @@
+<div class='form__field'>
+  <label class='field__label' for='{{name}}'>
+    {{label}}
+  </label>
+  <input
+    oninput='{{action}}(this.name, this.value)'
+    type={{type}}
+    class='field__input'
+    name='{{name}}'
+    id='{{name}}'
+    placeholder='{{placeholder}}'
+  />
+</div>

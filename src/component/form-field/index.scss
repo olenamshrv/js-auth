@@ -1,0 +1,75 @@
+@use '../../style' as s;
+
+@use '../../style/form.scss' as form;
+
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(2);
+
+    font-size: 14px;
+
+    }
+
+.field {
+
+    &__label {
+        color: s.color('gray-dark');
+    }
+
+    &__input, &--select {
+        padding: s.space(4);
+        border-radius: 10px;
+        background: s.color('box');
+        border: 1px solid s.color('box');
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: grid;
+
+        position: relative;
+
+        & .field__icon {
+            @include s.click;
+
+            display: block;
+            height: 14px;
+            width: 14px;
+
+            background-size: cover;
+
+            &[show] {
+                background-image: url('svg/eye-off.svg');
+            };
+
+            position: absolute;
+            right: 16px;
+            top: calc( 50% - 7px);
+
+        }
+
+    }
+
+    &__input {
+        transition: border-color 0.3s;
+
+        &:hover {
+            border-color: s.color('gray-dark');
+        }
+
+        &:focus {
+            border-color: s.color('main');
+        }
+
+        &::placeholder {
+            color: s.color('light');
+        }
+
+        &--error {
+            border-color: s.color('red-light') !important;
+        }
+    }
+
+}

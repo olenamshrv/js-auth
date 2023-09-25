@@ -1,0 +1,111 @@
+@use './index.scss' as s;
+
+.form {
+
+    display: flex;
+    flex-direction: column;
+    gap: s.space(3);
+
+	&__error {
+		display: none;
+		color: s.color('red-light');
+		font-size: 12px;
+
+        &--active {
+            display: block;
+	    }
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        padding: s.space(4);
+        gap: s.space(2);
+
+        border-radius: 10px;
+        border: 1px solid s.color('box');
+        align-items: center;
+        position: relative;
+
+        transition: border-color 0.3s;
+
+        &:hover {
+            border-color: s.color('gray-dark');
+        }
+
+   
+        &__input {
+            height: 0;
+            width: 0;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        &__icon {
+            height: 10px;
+            width: 10px;
+
+            position: absolute;
+            top: calc( 50% - 5px );
+            left: 16px;
+            // opacity: 0;
+            cursor: pointer;
+
+            background-image: url('/svg/unchecked.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &[checked] {
+                background-image: url('/svg/checked.svg'); 
+            }
+        }
+
+        &__text {
+            color: s.color('gray');
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 18px;
+        }
+    }
+
+    &__button {
+        border-radius: 10px;
+        background-color: s.color('main');
+
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+
+        padding: 16px 0;
+
+        @include s.click;
+
+        &:active {
+            opacity: 0.3;
+        }
+    }
+
+    &__alert {
+        border: 1px solid transparent;
+        padding: s.space(3) s.space(4);
+        border-radius: 10px;
+
+        &--error {
+            color: s.color('red-light');
+            border: 1px solid s.color('red-light');
+        }
+
+        &--info {
+            color: s.color('blue-light');
+            border: 1px solid s.color('blue-light');
+        }
+
+        &--success {
+            color: s.color('green-light');
+            border: 1px solid s.color('green-light');
+        }
+    }
+
+}
