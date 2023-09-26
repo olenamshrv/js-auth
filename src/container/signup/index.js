@@ -17,12 +17,12 @@ class SignupForm {
 
 window.signupForm = SignupForm
 
-class FieldCheckbox {
-  static toggle = (target) => {
-    target.toggleAttribute('checked')
+// class FieldCheckbox {
+//   static toggle = (target) => {
+//     target.toggleAttribute('checked')
 
-    target.previousElementSibling.toggleAttribute('checked')
-  }
-}
+//     target.previousElementSibling.toggleAttribute('checked')
+//   }
+// }
 
-window.fieldCheckbox = FieldCheckbox
+// window.fieldCheckbox = FieldCheckbox

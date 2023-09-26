@@ -1,4 +1,4 @@
-<div class='form__field field--password'>
+<div class='field field--password'>
 
   <label class='field__label' for='{{name}}'>
     {{label}}
@@ -6,11 +6,11 @@
 
   <div class='field__wrapper'>
     <input
-      oninput='{{action}}(this.name, this.value)'
-      type={{type}}
+      oninput='signupForm.change(this.name, this.value)'
+      type='password'
       class='field__input'
       name='{{name}}'
-      id='{{name}}'
+      value=''
       placeholder='{{placeholder}}'
     />
     <span
@@ -18,8 +18,4 @@
       class='field__icon'
     ></span>
   </div>
-
-  {{!-- {{#if text}}
-    <span class='field__error'>{{text}}</span>
-  {{/if}} --}}
 </div>

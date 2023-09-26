@@ -20,8 +20,9 @@ router.get('/signup', function (req, res) {
     // вказуємо назву компонентів
     component: [
       'back-button',
-      'form-field',
+      'field',
       'field-password',
+      'field-checkbox',
       'field-select',
     ],
 
