@@ -30,43 +30,12 @@
         transition: border-color 0.3s;
 
         &:hover {
-            border-color: s.color('main');
+            border-color: s.color('light');
         }
 
         &:focus {
             border-color: s.color('main');
         }
-
-        &--error {
-            border-color: s.color('red-light') !important;
-        }
     }
-
-    // &__wrapper {
-    //     width: 100%;
-    //     display: grid;
-
-    //     position: relative;
-
-    //     & .field__icon {
-    //         @include s.click;
-
-    //         display: block;
-    //         height: 14px;
-    //         width: 14px;
-
-    //         background-size: cover;
-
-    //         &[show] {
-    //             background-image: url('svg/eye-off.svg');
-    //         };
-
-    //         position: absolute;
-    //         right: 16px;
-    //         top: calc( 50% - 7px);
-
-    //     }
-
-    // }
 
 }

@@ -5,6 +5,12 @@ const router = express.Router()
 
 const { User } = require('../class/user')
 
+User.create({
+  email: 'test#email.com',
+  password: 123,
+  role: 1,
+})
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -33,7 +39,10 @@ router.get('/signup', function (req, res) {
     // вказуємо дані,
     data: {
       role: [
-        { value: User.USER_ROLE.USER, text: 'Користувач' },
+        {
+          value: User.USER_ROLE.USER,
+          text: 'Користувач',
+        },
         {
           value: User.USER_ROLE.ADMIN,
           text: 'Адміністратор',
@@ -46,6 +55,30 @@ router.get('/signup', function (req, res) {
     },
   })
   // ↑↑ сюди вводимо JSON дані
+})
+
+router.post('/signup', function (req, res) {
+  const { email, password, role } = req.body
+
+  console.log(req.body)
+
+  if (!email || !password || !role) {
+    return res.status(400).json({
+      message: "Помилка, обов' язкові поля відсутні",
+    })
+  }
+
+  try {
+    User.create({ email, password, role })
+
+    return res.status(200).json({
+      message: 'Користувач успішно зареєстрований',
+    })
+  } catch (er) {
+    return res.status(400).json({
+      message: 'Помилка створення користувача',
+    })
+  }
 })
 
 // Підключаємо роутер до бек-енду
