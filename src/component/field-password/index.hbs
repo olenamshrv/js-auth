@@ -6,7 +6,7 @@
 
   <div class='field__wrapper'>
     <input
-      oninput='signupForm.change(this.name, this.value)'
+      oninput='{{action}}(this.name, this.value)'
       type='password'
       class='field__input validation'
       name='{{name}}'
