@@ -4,7 +4,7 @@ import {
   REG_EXP_PASSWORD,
 } from '../../script/form'
 
-import { User } from '../../class/user'
+import { saveSession } from '../../script/session'
 
 class SignupForm extends Form {
   // static value = {}
@@ -114,6 +114,10 @@ class SignupForm extends Form {
 
         if (res.ok) {
           this.setAlert('success', data.message)
+          // alert(data.session.token)
+          saveSession(data.session)
+
+          location.assign('/')
         } else {
           this.setAlert('error', data.message)
         }

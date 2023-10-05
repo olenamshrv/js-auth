@@ -3,7 +3,6 @@
   І котрий обгортає код container файлів для будь-яких ендпоїнтів
 }}
 
-
 <html>
 
   <head>
@@ -43,6 +42,10 @@
       href='dist/css/container/{{name}}/index.css'
       rel='stylesheet'
     />
+    {{! Підключаємо файл скриптів container }}
+    <script
+      src='dist/js/container/{{name}}/index.js'
+    ></script>
 
     {{#each component}}
       {{! Підключаємо файл стилів component }}
@@ -50,6 +53,10 @@
         href='dist/css/component/{{this}}/index.css'
         rel='stylesheet'
       />
+      {{! Підключаємо файл скриптів component }}
+      <script
+        src='dist/js/component/{{this}}/index.js'
+      ></script>
     {{/each}}
 
   </head>
@@ -60,17 +67,5 @@
     {{{body}}}
 
   </body>
-
-  {{#each component}}
-    {{! Підключаємо файл скриптів component }}
-    <script
-      src='dist/js/component/{{this}}/index.js'
-    ></script>
-  {{/each}}
-
-  {{! Підключаємо файл скриптів container }}
-  <script
-    src='dist/js/container/{{name}}/index.js'
-  ></script>
 
 </html>

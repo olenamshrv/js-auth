@@ -51,4 +51,10 @@ body {
     
 	}
 
+    &__subtitle {
+        font-size: 14px;
+        color: s.color(gray);
+        line-height: 1.5em;
+	}
+
 }

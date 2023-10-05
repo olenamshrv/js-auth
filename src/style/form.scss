@@ -84,3 +84,15 @@
             border-color: s.color('red-light') !important;
     }
 }
+
+.link {
+    color: s.color(main);
+    font-weight: 700;
+
+    @include s.click;
+}
+
+.link__prefix {
+    color: s.color(light);
+    font-size: 14px;
+}
